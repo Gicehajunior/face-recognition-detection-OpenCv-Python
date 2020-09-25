@@ -13,8 +13,7 @@ language = 'en'
 # have a high speed 
 gTTSInstance = gTTS(text=speechToSpeak, lang=language, slow=False)
 
-# Saving the converted audio in a mp3 file named 
-# welcome  
+# Saving the converted audio in a mp3 file
 gTTSInstance.save("openDoorAlert.mp3") 
 
 # to play the audio
