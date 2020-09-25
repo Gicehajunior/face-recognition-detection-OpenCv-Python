@@ -1,5 +1,8 @@
 import cv2
 import sys
+from pydub import AudioSegment
+from pydub.playback import play
+
 
 face_cascade = cv2.CascadeClassifier('cascades/haarcascade_frontalface_default.xml')
 
@@ -25,14 +28,15 @@ while True:
         point1 = x+w
         point2 = y+h
         frame_color = (50, 50, 200)
+        showFrame = ""
+        alert
         
         cv2.rectangle(frame, (x, y), (point1, point2), frame_color, 2)
-        cv2.imshow('video', frame)
-        
+        showFrame = cv2.imshow('video', frame)
+        if showFrame:
+            alert = AudioSegment.from_mp3('openDoorAlert.mp3')
+            play(alert)
+            
         if cv2.waitKey(1) & 0xFF == ord('q'):
             sys.exit()
         
-
-
-
-
