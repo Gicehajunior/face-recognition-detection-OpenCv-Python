@@ -31,6 +31,11 @@ while True:
         cv2.imshow('video', frame)
         if faces.any():
             playsound.playsound('openDoorAlert.mp3', True)
+            
+            if len(faces) > 1:
+                print("There are " + str(len(faces)) + " peoples at the gate")
+            else:
+                print("There is " + str(len(faces)) + " person at the gate")
         else:
             pass
         if cv2.waitKey(1) & 0xFF == ord('q'):
